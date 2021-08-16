@@ -1,0 +1,3 @@
+[submodule "Padauk-Peripherals"]
+	path = Padauk-Peripherals
+	url = git@github.com:robertpuccinelli/Padauk-Peripherals.git
