@@ -2,7 +2,46 @@
 PROJECT=PRE_FILE
 [LINKS]
 ~Padauk_PeristalticPump.C
+~C:\Users\Robby\git_Windows\Peristaltic-Pump\Padauk-Peripherals\pdk_timer_8b.c
+~C:\Users\Robby\git_Windows\Peristaltic-Pump\Padauk-Peripherals\pdk_stepper.c
+~C:\Users\Robby\git_Windows\Peristaltic-Pump\Padauk-Peripherals\pdk_math.c
+~C:\Users\Robby\git_Windows\Peristaltic-Pump\Padauk-Peripherals\pdk_lcd.c
+~C:\Users\Robby\git_Windows\Peristaltic-Pump\Padauk-Peripherals\pdk_i2c.c
+~C:\Users\Robby\git_Windows\Peristaltic-Pump\Padauk-Peripherals\pdk_eeprom.c
+~C:\Users\Robby\git_Windows\Peristaltic-Pump\Padauk-Peripherals\pdk_button.c
+~pump_core.c
+~C:\Users\Robby\git_Windows\Peristaltic-Pump\Padauk-Peripherals\pdk_pwm_11b.c
 [HEAD]
-~extern.h
+~C:\Users\Robby\git_Windows\Peristaltic-Pump\Padauk-Peripherals\pdk_button.h
+~C:\Users\Robby\git_Windows\Peristaltic-Pump\Padauk-Peripherals\pdk_eeprom.h
+~C:\Users\Robby\git_Windows\Peristaltic-Pump\Padauk-Peripherals\pdk_math.h
+~C:\Users\Robby\git_Windows\Peristaltic-Pump\Padauk-Peripherals\pdk_i2c.h
+~C:\Users\Robby\git_Windows\Peristaltic-Pump\Padauk-Peripherals\pdk_lcd.h
+~C:\Users\Robby\git_Windows\Peristaltic-Pump\Padauk-Peripherals\pdk_stepper.h
+~C:\Users\Robby\git_Windows\Peristaltic-Pump\Padauk-Peripherals\pdk_timer_8b.h
+~C:\Users\Robby\git_Windows\Peristaltic-Pump\Padauk-Peripherals\system_settings.h
+~C:\Users\Robby\git_Windows\Peristaltic-Pump\Padauk-Peripherals\pdk_pwm_11b.h
+~pump_core.h
 [DEPEND]
+~$:INC_PDK\PMS132.INC
+~Padauk_PeristalticPump.PRE
+[Ram_Break]
+Break1=No 0000
+Break2=No 0000
+Break3=No 0000
+Break4=No 0000
+[Stack_Break]
+Break1=Au 0000 00FF
+Break2=Au 0000 00FF
+Break3=Au 0000 00FF
+Break4=Au 0000 00FF
+Break5=Au 0000 00FF
+Break6=Au 0000 00FF
+Break7=Au 0000 00FF
+Break8=Au 0000 00FF
+[Ctrl_Break]
+Mark=51 1
+ICE=0 6 2 1388
+[PRE]
+~Padauk_PeristalticPump.PRJ
 ~Padauk_PeristalticPump.PRE
