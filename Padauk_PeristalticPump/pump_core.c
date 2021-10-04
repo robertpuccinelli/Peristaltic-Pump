@@ -61,10 +61,10 @@ Copyright (c) 2021 Robert R. Puccinelli
 
 // Button pin assignments
 #DEFINE active_inputs      button_active_b
-#DEFINE start_button       PB.0
-#DEFINE select_button      PB.1
-#DEFINE rotary_input1      PB.2
-#DEFINE rotary_input2      PB.3
+#DEFINE start_button       PB.1
+#DEFINE select_button      PB.3
+#DEFINE rotary_input1      PB.0
+#DEFINE rotary_input2      PB.2
 
 // Default values on first initialization
 #DEFINE def_steps_per_rev  800
@@ -571,6 +571,7 @@ static void Process_Inputs(void)
 	temp_data$1  = active_inputs & _FIELD(select_button);
 	temp_data2$0 = active_inputs & _FIELD(rotary_input1);
 	temp_data2$1 = active_inputs & _FIELD(rotary_input2);
+
 	active_inputs = 0 ;
 
 	if (temp_data$0)  start_flag  = 1;
@@ -579,7 +580,7 @@ static void Process_Inputs(void)
 	{
 		shift_r_flag = 0;
 		shift_flag  = 1;
-		if (temp_data2$1)  shift_r_flag = 1;
+		if (rotary_input2)  shift_r_flag = 1;
 	}
 }
 
@@ -698,7 +699,7 @@ void Pump_Initialize(void)
 
 void Pump_State_Machine(void)
 {
-	Button_Poll();
+	while(!active_inputs) Button_Poll();
 	Process_Inputs();
 	next_screen = curr_screen;
 	switch (curr_screen)
@@ -775,13 +776,4 @@ void Pump_State_Machine(void)
 	select_flag = 0;
 	shift_flag  = 0;
 	update_display = 0;
-
-	if (!stepper_is_moving)
-	{
-		CLKMD = 0xF4;
-		CLKMD.4 = 0;
-		STOPEXE;
-		CLKMD.4 = 1;
-		CLKMD = 0x14;
-	}
 }
